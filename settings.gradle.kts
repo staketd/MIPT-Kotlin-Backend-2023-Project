@@ -1,3 +1,2 @@
-
-rootProject.name = "task2"
+rootProject.name = "kotlin_backend_project"
 
