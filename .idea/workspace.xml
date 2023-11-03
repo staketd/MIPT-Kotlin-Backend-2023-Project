@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5380527-5036-4ae3-a548-f24430a71cc4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/Application.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/BlogModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/BlogApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/model/BlogModifyRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/model/ErrorResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/model/BlogRecord.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/repository/BlogRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/repository/impl/BlogRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/BlogNotFoundException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/InstantSerializer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/ValidationException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/BlogApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/BlogApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/model/BlogRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/model/BlogRecord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/repository/impl/BlogRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/repository/impl/BlogRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/BlogNotFoundException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/BlogNotFoundException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/ValidationException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/ValidationException.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,12 +68,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "ktor.last.update.timestamp": "1698262386174",
+    "ktor.last.update.timestamp": "1698985977014",
+    "last_opened_file_path": "/Users/pushind/mipt/2023_autumn/kotlin_backend/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
@@ -260,7 +251,16 @@
       <workItem from="1697803147707" duration="314000" />
       <workItem from="1697803477187" duration="24000" />
       <workItem from="1697803512160" duration="32000" />
-      <workItem from="1698261894496" duration="4235000" />
+      <workItem from="1698261894496" duration="6299000" />
+      <workItem from="1698654550326" duration="598000" />
+      <workItem from="1698660760786" duration="1214000" />
+      <workItem from="1698756540607" duration="597000" />
+      <workItem from="1698757307378" duration="597000" />
+      <workItem from="1698759055091" duration="598000" />
+      <workItem from="1698920300768" duration="597000" />
+      <workItem from="1698922245407" duration="420000" />
+      <workItem from="1698922680259" duration="842000" />
+      <workItem from="1698985534672" duration="1601000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1697195975059</created>
@@ -269,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697195975059</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Api done">
+      <created>1698266358716</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698266358716</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +284,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Api done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Api done" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

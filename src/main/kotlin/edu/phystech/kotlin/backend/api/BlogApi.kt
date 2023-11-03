@@ -8,15 +8,20 @@ import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import io.ktor.util.pipeline.*
 import org.koin.ktor.ext.inject
+
+fun PipelineContext<Unit, ApplicationCall>.getPathParameter(name: String): String? = call.parameters[name]
+fun PipelineContext<Unit, ApplicationCall>.getUrlParameter(name: String): String? = call.request.queryParameters[name]
 
 fun Application.configureApi() {
     val maxTextLength = 500
+
     routing {
         val blogRepository by inject<BlogRepository>()
-        get("/blog/{id}") {
-            val blogId = call.parameters["id"]?.toULong() ?: throw ValidationException("Id parameter not specified or invalid")
 
+        get("/blog/{id}") {
+            val blogId = getPathParameter("id")?.toULong() ?: throw ValidationException("Id parameter not specified or invalid")
             val blogRecord = blogRepository.getById(blogId) ?: throw BlogNotFoundException(blogId)
             call.respond(blogRecord)
         }
@@ -37,11 +42,11 @@ fun Application.configureApi() {
         }
 
         get("/blogs/page") {
-            val offset = call.request.queryParameters["offset"]?.toInt() ?:
+            val offset = getUrlParameter("offset")?.toInt() ?:
                 throw ValidationException("Offset parameter is not specified of invalid")
 
 
-            val limit = call.request.queryParameters["limit"]?.toInt() ?:
+            val limit = getUrlParameter("offset")?.toInt() ?:
                 throw ValidationException("Limit parameter is not specified of invalid")
 
             call.respond(blogRepository.getPage(offset, limit))
@@ -67,3 +72,4 @@ fun Application.configureApi() {
         }
     }
 }
+

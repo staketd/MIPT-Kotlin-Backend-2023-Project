@@ -8,5 +8,4 @@ import kotlinx.serialization.UseSerializers
 import java.time.Instant
 
 @Serializable
-data class BlogRecord(val id: ULong, val text: String, val updateTime: Instant) {
-}
+data class BlogRecord(val id: ULong, val text: String, val updateTime: Instant)

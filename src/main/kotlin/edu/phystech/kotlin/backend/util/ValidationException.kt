@@ -1,4 +1,3 @@
 package edu.phystech.kotlin.backend.util
 
-class ValidationException(message: String) : RuntimeException(message) {
-}
+class ValidationException(message: String) : RuntimeException(message) 

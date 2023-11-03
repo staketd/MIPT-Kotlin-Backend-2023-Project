@@ -12,7 +12,8 @@ class BlogRepositoryImpl: BlogRepository {
     override fun getAll(): Collection<BlogRecord> = records.values.sortedBy { it.id }
 
     override fun getPage(offset: Int, limit: Int): Collection<BlogRecord> =
-        records.values.sortedBy { it.id }.subList(minOf(offset, records.size), minOf(offset + limit, records.size))
+        records.values.sortedBy { it.id }
+            .subList(minOf(offset, records.size), minOf(offset + limit, records.size))
 
     override fun getById(id: ULong): BlogRecord? = records[id]
 
