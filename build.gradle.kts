@@ -14,6 +14,9 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-auth-jvm:2.3.5")
+    implementation("io.ktor:ktor-server-core-jvm:2.3.5")
+    implementation("io.ktor:ktor-server-auth-jwt-jvm:2.3.5")
     val ktorVersion = "2.3.5"
     val koinVersion = "3.5.0"
     val logbackVersion = "1.4.11"
