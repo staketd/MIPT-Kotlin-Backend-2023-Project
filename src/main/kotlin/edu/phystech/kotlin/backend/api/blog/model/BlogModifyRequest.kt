@@ -1,4 +1,4 @@
-package edu.phystech.kotlin.backend.api.model
+package edu.phystech.kotlin.backend.api.blog.model
 
 import kotlinx.serialization.Serializable
 

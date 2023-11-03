@@ -1,4 +1,4 @@
-package edu.phystech.kotlin.backend.util
+package edu.phystech.kotlin.backend.common
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind
