@@ -7,8 +7,7 @@ import edu.phystech.kotlin.backend.api.user.model.UserRegistrationRequest
 import edu.phystech.kotlin.backend.common.JWT_AUDIENCE
 import edu.phystech.kotlin.backend.common.JWT_ISSUER
 import edu.phystech.kotlin.backend.common.JWT_SECRET
-import edu.phystech.kotlin.backend.common.exception.ValidationException
-import edu.phystech.kotlin.backend.repository.user.UserRepository
+import edu.phystech.kotlin.backend.service.UserService
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
@@ -17,17 +16,12 @@ import org.koin.ktor.ext.inject
 import java.util.*
 
 fun Routing.userRoute() {
-    val maxLoginLength = 100
-    val userRepository by inject<UserRepository>()
+    val userService by inject<UserService>()
 
     post("/user/register") {
         val userRegistrationRequest = call.receive<UserRegistrationRequest>()
 
-        if (userRegistrationRequest.login.length > maxLoginLength) {
-            throw ValidationException("Login is too long: max length is $maxLoginLength")
-        }
-
-        userRepository.registerUser(
+        userService.registerUser(
             userRegistrationRequest.login,
             userRegistrationRequest.name,
             userRegistrationRequest.password
@@ -39,7 +33,7 @@ fun Routing.userRoute() {
     post("/user/login") {
         val userLoginRequest = call.receive<UserLoginRequest>()
 
-        userRepository.validateLoginPassword(userLoginRequest.login, userLoginRequest.password)
+        userService.validateLoginPassword(userLoginRequest.login, userLoginRequest.password)
 
         val token = JWT.create()
             .withAudience(JWT_AUDIENCE)

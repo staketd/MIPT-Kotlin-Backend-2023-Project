@@ -14,6 +14,7 @@ import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.auth.jwt.*
+import io.ktor.server.plugins.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
@@ -55,6 +56,9 @@ fun Application.configureStatusPages() {
         }
         exception<UserAlreadyExistsException> { call, cause ->
             call.respond(HttpStatusCode.BadRequest, ErrorResponse(cause.message))
+        }
+        exception<BadRequestException> {call, cause ->
+            call.respond(HttpStatusCode.BadRequest, ErrorResponse(cause.cause?.message ?: cause.message))
         }
     }
 }

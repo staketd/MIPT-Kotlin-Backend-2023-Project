@@ -4,10 +4,12 @@ import edu.phystech.kotlin.backend.common.exception.AccessDeniedException
 import edu.phystech.kotlin.backend.common.exception.ValidationException
 import edu.phystech.kotlin.backend.model.blog.BlogRecord
 import edu.phystech.kotlin.backend.repository.blog.BlogRepository
-import java.time.Instant
+import kotlinx.datetime.Clock
 
 class BlogService(private val blogRepository: BlogRepository) {
-    private val maxTextLength = 500
+    companion object {
+        const val MAX_TEXT_LENGTH = 500
+    }
 
     fun getAll(login: String): Collection<BlogRecord> = blogRepository.getAll(login)
 
@@ -26,14 +28,14 @@ class BlogService(private val blogRepository: BlogRepository) {
     fun update(login: String, id: ULong, text: String): BlogRecord {
         validateTextLength(text)
         val oldBlog = getById(login, id)
-        val newBlog = oldBlog.copy(text = text, updateTime = Instant.now())
+        val newBlog = oldBlog.copy(text = text, updateTime = Clock.System.now())
         blogRepository.update(newBlog)
         return newBlog
     }
 
     fun createBlog(login: String, text: String): BlogRecord {
         validateTextLength(text)
-        val blog = BlogRecord(0u, text, Instant.now(), login)
+        val blog = BlogRecord(0u, text, Clock.System.now(), login)
 
         return blogRepository.create(blog)
     }
@@ -45,9 +47,9 @@ class BlogService(private val blogRepository: BlogRepository) {
     }
 
     private fun validateTextLength(text: String) {
-        if (text.length > maxTextLength) {
+        if (text.length > MAX_TEXT_LENGTH) {
             throw ValidationException("Blog record text is too long, max length is " +
-                    "$maxTextLength, but ${text.length} is received")
+                    "$MAX_TEXT_LENGTH, but ${text.length} is received")
         }
     }
 }

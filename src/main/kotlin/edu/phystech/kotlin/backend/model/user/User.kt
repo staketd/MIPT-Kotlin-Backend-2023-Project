@@ -1,6 +1,6 @@
 package edu.phystech.kotlin.backend.model.user
 
-import java.time.Instant
+import kotlinx.datetime.Instant
 
 data class User(
     val login: String,

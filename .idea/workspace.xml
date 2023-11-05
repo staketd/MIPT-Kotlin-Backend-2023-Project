@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5380527-5036-4ae3-a548-f24430a71cc4" name="Changes" comment="">
+    <list default="true" id="c5380527-5036-4ae3-a548-f24430a71cc4" name="Changes" comment="HW-5">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/user/UserApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/user/UserApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/model/user/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/model/user/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules/UserModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules/UserModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/user/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/user/impl/UserRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/user/impl/UserRepositoryImpl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +33,15 @@
       <list>
         <option value="Kotlin Interface" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="HW-3" />
+        <entry key="$PROJECT_DIR$" value="HW-5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "ktor.last.update.timestamp": "1698985977014",
+    "ktor.last.update.timestamp": "1699206698637",
     "last_opened_file_path": "/Users/pushind/mipt/2023_autumn/kotlin_backend/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -318,7 +326,19 @@
     <MESSAGE value="Api done" />
     <MESSAGE value="HW-3 fix style after review" />
     <MESSAGE value="HW-4" />
-    <option name="LAST_COMMIT_MESSAGE" value="HW-4" />
+    <MESSAGE value="HW-5" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-5" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt</url>
+          <line>60</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

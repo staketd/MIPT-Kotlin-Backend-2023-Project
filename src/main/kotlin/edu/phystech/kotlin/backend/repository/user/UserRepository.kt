@@ -1,7 +1,9 @@
 package edu.phystech.kotlin.backend.repository.user
 
-interface UserRepository {
-    fun registerUser(login: String, name: String, password: String)
+import edu.phystech.kotlin.backend.model.user.User
 
-    fun validateLoginPassword(login: String, password: String)
+interface UserRepository {
+    fun registerUser(user: User)
+
+    fun getUser(login: String): User?
 }

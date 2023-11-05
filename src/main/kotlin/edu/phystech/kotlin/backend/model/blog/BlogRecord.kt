@@ -1,11 +1,7 @@
-@file:UseSerializers(InstantSerializer::class)
-
 package edu.phystech.kotlin.backend.model.blog
 
-import edu.phystech.kotlin.backend.common.InstantSerializer
+import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.UseSerializers
-import java.time.Instant
 
 @Serializable
 data class BlogRecord(
