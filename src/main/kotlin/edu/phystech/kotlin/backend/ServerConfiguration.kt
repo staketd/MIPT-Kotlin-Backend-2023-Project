@@ -18,7 +18,9 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import kotlinx.serialization.json.Json
+import org.jetbrains.exposed.sql.exposedLogger
 import org.koin.ktor.plugin.Koin
+import org.slf4j.LoggerFactory
 
 
 fun Application.configureServer() {
@@ -37,8 +39,10 @@ fun Application.configureServer() {
 }
 
 fun Application.configureStatusPages() {
+    val logger = LoggerFactory.getLogger("StatusPages")
     install(StatusPages) {
         exception<Throwable> { call, cause ->
+            logger.error("Failed to serve request: ${cause.message}", cause)
             call.respond(HttpStatusCode.InternalServerError, ErrorResponse("500: $cause"))
         }
         exception<ValidationException> { call, cause ->

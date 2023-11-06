@@ -5,7 +5,7 @@ import edu.phystech.kotlin.backend.repository.blog.BlogRepository
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
 
-class BlogRepositoryImpl: BlogRepository {
+class InMemoryBlogRepository: BlogRepository {
     private val records: ConcurrentMap<ULong, BlogRecord> = ConcurrentHashMap()
     private var nextRecordId: ULong = 0u
 
@@ -32,5 +32,7 @@ class BlogRepositoryImpl: BlogRepository {
         return newBlog
     }
 
-    override fun deleteById(id: ULong): BlogRecord? = records.remove(id)
+    override fun deleteById(id: ULong) {
+        records.remove(id)
+    }
 }

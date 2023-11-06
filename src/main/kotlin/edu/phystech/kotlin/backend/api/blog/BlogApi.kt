@@ -60,7 +60,8 @@ fun Routing.blogRoute() {
             val blogId = getPathParameter("id")?.toULong()
                 ?: throw ValidationException("Id parameter not specified or invalid")
 
-            call.respondNullable(blogService.deleteBlog(getUserLogin(), blogId))
+            blogService.deleteBlog(getUserLogin(), blogId)
+            call.respondText("Success!")
         }
     }
 }
