@@ -1,12 +1,11 @@
 package edu.phystech.kotlin.backend
 
-import com.auth0.jwt.JWT
-import com.auth0.jwt.algorithms.Algorithm
-import edu.phystech.kotlin.backend.common.*
+import edu.phystech.kotlin.backend.common.ErrorResponse
 import edu.phystech.kotlin.backend.common.exception.AccessDeniedException
 import edu.phystech.kotlin.backend.common.exception.InvalidLoginException
 import edu.phystech.kotlin.backend.common.exception.UserAlreadyExistsException
 import edu.phystech.kotlin.backend.common.exception.ValidationException
+import edu.phystech.kotlin.backend.common.getJWTSettings
 import edu.phystech.kotlin.backend.modules.blogModule
 import edu.phystech.kotlin.backend.modules.userModule
 import io.ktor.http.*
@@ -64,23 +63,13 @@ fun Application.configureStatusPages() {
 }
 
 fun Application.configureJWT() {
+    val jwtSettings = getJWTSettings()
     authentication {
         jwt("auth-jwt") {
-            realm = JWT_REALM
-            verifier(
-                JWT
-                    .require(Algorithm.HMAC256(JWT_SECRET))
-                    .withAudience(JWT_AUDIENCE)
-                    .withIssuer(JWT_ISSUER)
-                    .build()
-            )
+            realm = jwtSettings.realm
+            verifier(jwtSettings.getVerifier())
             validate { credential ->
-                if (credential.payload.audience.contains(JWT_AUDIENCE)
-                    && credential.payload.getClaim("login").asString() != "") {
-                    JWTPrincipal(credential.payload)
-                } else {
-                    null
-                }
+                jwtSettings.verify(credential)
             }
 
             challenge { defaultScheme, realm ->

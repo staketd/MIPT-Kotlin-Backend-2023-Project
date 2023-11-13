@@ -2,9 +2,11 @@ package edu.phystech.kotlin.backend.repository.blog.impl
 
 import edu.phystech.kotlin.backend.model.blog.BlogRecord
 import edu.phystech.kotlin.backend.repository.blog.BlogRepository
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.ConcurrentMap
 
 class BlogRepositoryImpl: BlogRepository {
-    private val records: MutableMap<ULong, BlogRecord> = mutableMapOf()
+    private val records: ConcurrentMap<ULong, BlogRecord> = ConcurrentHashMap()
     private var nextRecordId: ULong = 0u
 
     override fun getAll(login: String): Collection<BlogRecord> =

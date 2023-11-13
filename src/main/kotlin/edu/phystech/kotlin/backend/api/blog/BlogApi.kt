@@ -1,21 +1,17 @@
 package edu.phystech.kotlin.backend.api.blog
 
 import edu.phystech.kotlin.backend.api.blog.model.BlogModifyRequest
+import edu.phystech.kotlin.backend.api.getPathParameter
+import edu.phystech.kotlin.backend.api.getUrlParameter
+import edu.phystech.kotlin.backend.api.getUserLogin
 import edu.phystech.kotlin.backend.common.exception.ValidationException
 import edu.phystech.kotlin.backend.service.BlogService
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
-import io.ktor.server.auth.jwt.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import io.ktor.util.pipeline.*
 import org.koin.ktor.ext.inject
-
-fun PipelineContext<Unit, ApplicationCall>.getUserLogin(): String =
-    call.principal<JWTPrincipal>()!!.payload.getClaim("login").asString()
-fun PipelineContext<Unit, ApplicationCall>.getPathParameter(name: String): String? = call.parameters[name]
-fun PipelineContext<Unit, ApplicationCall>.getUrlParameter(name: String): String? = call.request.queryParameters[name]
 
 fun Routing.blogRoute() {
 
