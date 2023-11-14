@@ -5,13 +5,10 @@ import edu.phystech.kotlin.backend.common.exception.ValidationException
 import edu.phystech.kotlin.backend.model.blog.BlogRecord
 import edu.phystech.kotlin.backend.repository.blog.BlogRepository
 import edu.phystech.kotlin.backend.service.BlogService
+import edu.phystech.kotlin.backend.service.BlogService.Companion.MAX_TEXT_LENGTH
 import kotlinx.datetime.Clock
 
 class BlogServiceImpl(private val blogRepository: BlogRepository): BlogService {
-    companion object {
-        const val MAX_TEXT_LENGTH = 500
-    }
-
     override fun getAll(login: String): Collection<BlogRecord> = blogRepository.getAll(login)
 
     override fun getPage(login: String, offset: Int, limit: Int): Collection<BlogRecord> =

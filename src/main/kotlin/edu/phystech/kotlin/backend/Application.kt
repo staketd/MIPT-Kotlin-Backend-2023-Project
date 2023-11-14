@@ -11,6 +11,7 @@ fun main() {
 }
 
 fun Application.blogApi() {
+    configureDatabase()
     configureServer()
     configureApi()
 }

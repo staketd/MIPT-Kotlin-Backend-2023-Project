@@ -6,7 +6,7 @@ import edu.phystech.kotlin.backend.repository.user.UserRepository
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
 
-class UserRepositoryImpl: UserRepository {
+class InMemoryUserRepository: UserRepository {
     private val users: ConcurrentMap<String, User> = ConcurrentHashMap()
 
     override fun registerUser(user: User) {

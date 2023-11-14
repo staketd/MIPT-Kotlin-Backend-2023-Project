@@ -17,6 +17,9 @@ dependencies {
     val ktorVersion = "2.3.5"
     val koinVersion = "3.5.0"
     val logbackVersion = "1.4.11"
+    val exposedVersion = "0.44.1"
+    val postgresDriverVersion = "42.6.0"
+
     val kotlinxVersion = "0.4.1"
 
     testImplementation(kotlin("test"))
@@ -37,6 +40,15 @@ dependencies {
     // Ktor logging dependencies
     implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
+    // Exposed dependencies
+    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-crypt:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-kotlin-datetime:$exposedVersion")
+
+    implementation("org.postgresql:postgresql:${postgresDriverVersion}")
 
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinxVersion")
 }

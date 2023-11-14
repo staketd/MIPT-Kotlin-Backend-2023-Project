@@ -19,6 +19,7 @@ import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import kotlinx.serialization.json.Json
 import org.koin.ktor.plugin.Koin
+import org.slf4j.LoggerFactory
 
 
 fun Application.configureServer() {
@@ -33,12 +34,13 @@ fun Application.configureServer() {
     }
     configureStatusPages()
     configureJWT()
-
 }
 
 fun Application.configureStatusPages() {
+    val logger = LoggerFactory.getLogger("StatusPages")
     install(StatusPages) {
         exception<Throwable> { call, cause ->
+            logger.error("Failed to serve request: ${cause.message}", cause)
             call.respond(HttpStatusCode.InternalServerError, ErrorResponse("500: $cause"))
         }
         exception<ValidationException> { call, cause ->
@@ -73,7 +75,8 @@ fun Application.configureJWT() {
             }
 
             challenge { defaultScheme, realm ->
-                call.respond(HttpStatusCode.Unauthorized, "Token is not valid or has expired")
+                call.respond(HttpStatusCode.Unauthorized,
+                    "Token is not valid or has expired. Realm: $realm, default scheme: $defaultScheme")
             }
         }
     }

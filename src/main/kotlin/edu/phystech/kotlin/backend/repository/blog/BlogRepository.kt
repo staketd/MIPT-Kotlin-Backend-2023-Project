@@ -13,5 +13,5 @@ interface BlogRepository {
 
     fun create(record: BlogRecord): BlogRecord
 
-    fun deleteById(id: ULong): BlogRecord?
+    fun deleteById(id: ULong)
 }
