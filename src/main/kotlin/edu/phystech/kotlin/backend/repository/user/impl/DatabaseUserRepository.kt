@@ -1,21 +1,28 @@
 package edu.phystech.kotlin.backend.repository.user.impl
 
+import edu.phystech.kotlin.backend.common.exception.UserAlreadyExistsException
 import edu.phystech.kotlin.backend.model.user.User
 import edu.phystech.kotlin.backend.repository.user.UserRepository
 import edu.phystech.kotlin.backend.repository.user.model.UserEntity
-import edu.phystech.kotlin.backend.repository.user.model.UsersTable
-import kotlinx.datetime.Clock
-import org.jetbrains.exposed.sql.selectAll
+import org.jetbrains.exposed.exceptions.ExposedSQLException
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.postgresql.util.PSQLState
 
 class DatabaseUserRepository : UserRepository {
     override fun registerUser(user: User) {
-        transaction {
-            UserEntity.new(user.login) {
-                name = user.name
-                registrationTime = user.registrationTime
-                passwordHashed = user.passwordHashed
+        try {
+            transaction {
+                UserEntity.new(user.login) {
+                    name = user.name
+                    registrationTime = user.registrationTime
+                    passwordHashed = user.passwordHashed
+                }
             }
+        } catch (e: ExposedSQLException) {
+            if (e.sqlState == PSQLState.UNIQUE_VIOLATION.state) {
+                throw UserAlreadyExistsException(user.login)
+            }
+            throw e
         }
     }
 

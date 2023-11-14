@@ -18,7 +18,6 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import kotlinx.serialization.json.Json
-import org.jetbrains.exposed.sql.exposedLogger
 import org.koin.ktor.plugin.Koin
 import org.slf4j.LoggerFactory
 
@@ -35,7 +34,6 @@ fun Application.configureServer() {
     }
     configureStatusPages()
     configureJWT()
-
 }
 
 fun Application.configureStatusPages() {
@@ -77,7 +75,8 @@ fun Application.configureJWT() {
             }
 
             challenge { defaultScheme, realm ->
-                call.respond(HttpStatusCode.Unauthorized, "Token is not valid or has expired")
+                call.respond(HttpStatusCode.Unauthorized,
+                    "Token is not valid or has expired. Realm: $realm, default scheme: $defaultScheme")
             }
         }
     }
