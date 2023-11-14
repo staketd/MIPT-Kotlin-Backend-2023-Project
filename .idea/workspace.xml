@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5380527-5036-4ae3-a548-f24430a71cc4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c5380527-5036-4ae3-a548-f24430a71cc4" name="Changes" comment="HW-5">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/PipelineContextExtensions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/common/JWTSettings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/impl/BlogServiceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/impl/UserServiceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/BlogApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/BlogApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/model/BlogRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/model/BlogRecord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/repository/impl/BlogRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/blog/repository/impl/BlogRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/BlogNotFoundException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/BlogNotFoundException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/ValidationException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/util/ValidationException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/blog/BlogApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/blog/BlogApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/user/UserApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/user/UserApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/common/ApplicationSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/common/ApplicationExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules/BlogModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules/BlogModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules/UserModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules/UserModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/blog/impl/BlogRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/blog/impl/BlogRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/BlogService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/BlogService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/service/UserService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,17 +38,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
-        <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="HW-5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,7 +76,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "ktor.last.update.timestamp": "1698985977014",
+    "jdk.selected.JAVA_MODULE": "21",
+    "ktor.last.update.timestamp": "1699864909397",
     "last_opened_file_path": "/Users/pushind/mipt/2023_autumn/kotlin_backend/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -78,16 +87,26 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/modules" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/repository/blog" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/user" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/blog" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="edu.phystech.kotlin.backend.api" />
+      <recent name="edu.phystech.kotlin.backend.service" />
+      <recent name="edu.phystech.kotlin.backend.service.impl" />
+      <recent name="edu.phystech.kotlin.backend.common.exception" />
+      <recent name="edu.phystech.kotlin.backend.common" />
+      <recent name="edu.phystech.kotlin.backend.model.blog" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.ApplicationKt">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="task2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +129,13 @@
     </configuration>
     <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.phystech.kotlin.backend.ApplicationKt" />
+      <module name="kotlin_backend_project.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryImplKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.phystech.kotlin.backend.repository.user.impl.UserRepositoryImplKt" />
       <module name="kotlin_backend_project.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -225,6 +251,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ApplicationKt" />
+        <item itemvalue="Kotlin.UserRepositoryImplKt" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +287,8 @@
       <workItem from="1698920300768" duration="597000" />
       <workItem from="1698922245407" duration="420000" />
       <workItem from="1698922680259" duration="842000" />
-      <workItem from="1698985534672" duration="1601000" />
+      <workItem from="1698985534672" duration="19211000" />
+      <workItem from="1699864841725" duration="8000000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1697195975059</created>
@@ -276,27 +304,82 @@
       <option name="project" value="LOCAL" />
       <updated>1698266358716</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HW-3 fix style after review">
+      <created>1699003757023</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699003757023</updated>
+    </task>
+    <task id="LOCAL-00004" summary="HW-4">
+      <created>1699021924203</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699021924203</updated>
+    </task>
+    <task id="LOCAL-00005" summary="HW-4">
+      <created>1699040915612</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699040915612</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Api done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Api done" />
+    <MESSAGE value="HW-3 fix style after review" />
+    <MESSAGE value="HW-4" />
+    <MESSAGE value="HW-5" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-5" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt</url>
+          <line>60</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/Application.kt</url>
-          <line>34</line>
-          <option name="timeStamp" value="2" />
+          <line>15</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/ServerConfiguration.kt</url>
+          <line>42</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/api/PipelineContextExtensions.kt</url>
+          <line>8</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/edu/phystech/kotlin/backend/common/JWTSettings.kt</url>
+          <line>13</line>
+          <properties class="edu.phystech.kotlin.backend.common.JWTSettings" method="generateToken">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

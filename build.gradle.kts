@@ -17,6 +17,8 @@ dependencies {
     val ktorVersion = "2.3.5"
     val koinVersion = "3.5.0"
     val logbackVersion = "1.4.11"
+    val kotlinxVersion = "0.4.1"
+
     testImplementation(kotlin("test"))
 
     implementation("io.ktor:ktor-server-core:$ktorVersion")
@@ -35,6 +37,8 @@ dependencies {
     // Ktor logging dependencies
     implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinxVersion")
 }
 
 tasks.test {
